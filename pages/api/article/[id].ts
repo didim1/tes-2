@@ -9,10 +9,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         case 'GET':
             const response = await axios.get(`https://api.spaceflightnewsapi.net/v3/articles/${id}`)
             const article: ArticleTypes = response.data
-
             res.status(200).json(article)
+            
             break;
-    
         default:
             res.setHeader('Allow', ['GET'])
             res.status(405).json({msg: `method ${method} not allowed`})

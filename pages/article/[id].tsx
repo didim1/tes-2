@@ -13,8 +13,6 @@ const Detail = () => {
 
     if (error) return <div>error</div>
     if (!data) return <div>loading...</div>
-
-
     return (
         <div className="container mx-auto">
             <Link href='/'>
